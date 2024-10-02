@@ -1,0 +1,11 @@
+<h1> Informações sobre o filme: </h1>
+
+<h3> Titulo: <%= @movie.title %> </h3>
+<h3> Genero: <%= @movie.genre.name %> </h3>
+<h3> Sinopse: <%= @movie.synopsis %> </h3>
+<h3> Ano de lançamento: <%= @movie.release_year %> </h3>
+<h3> Duração: <%= @movie.duration %> </h3>
+<h3> Diretor: <%= @movie.director.name %> </h3>
+<h3> Origem: <%= @movie.origin %> </h3>
+
+<%= link_to "Editar filme", edit_movie_path(@movie)%>

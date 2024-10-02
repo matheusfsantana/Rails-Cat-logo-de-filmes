@@ -1,0 +1,27 @@
+<h1> Cadastro de Diretores </h1>
+<%= form_with model: @director do |f| %>
+  <div>
+    <%= f.label "Nome"%><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label "Nacionalidade"%><br>
+    <%= f.text_field :nationality %>
+  </div>
+
+  <div>
+    <%= f.label "Data de nascimento"%><br>
+    <%= f.date_select :birth_date,
+      start_year: 1900,
+      end_year: Date.current.year %>  
+
+   <div>
+    <%= f.label "Gênero favorito"%><br>
+    <%= f.collection_select :favorite_genre_id, Genre.all, :id, :name %>
+  </div>
+
+  <div>
+    <%= f.submit "Criar" %>
+  </div>
+<% end %>

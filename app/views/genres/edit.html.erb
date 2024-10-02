@@ -1,0 +1,11 @@
+<h1> Editar gênero </h1>
+<%= form_with model: @genre do |f| %>
+  <div>
+    <%= f.label "Nome"%><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.submit "Salvar" %>
+  </div>
+<% end %>

@@ -1,0 +1,42 @@
+<h1> Cadastro de filme </h1>
+
+<%= form_with model: @movie do |f| %>
+  <div>
+    <%= f.label "Titulo"%><br>
+    <%= f.text_field :title %>
+  </div>
+
+   <div>
+    <%= f.label "Sinopse"%><br>
+    <%= f.text_area :synopsis %>
+  </div>
+
+  <div>
+    <%= f.label "Duração"%><br>
+    <%= f.number_field :duration, min: 0, max: 500, step: 1 %>
+  </div>
+
+   <div>
+    <%= f.label "Ano de lançamento"%><br>
+    <%= f.number_field :release_year, min: 1500, step: 1, value: Date.current.year %>
+  </div>
+
+   <div>
+    <%= f.label "Origem"%><br>
+    <%= f.text_field :origin %>
+  </div>
+
+   <div>
+    <%= f.label "Gênero"%><br>
+     <%= f.collection_select :genre_id, Genre.all, :id, :name %>
+  </div>
+
+   <div>
+     <%= f.label "Diretor"%><br>
+     <%= f.collection_select :director_id, Director.all, :id, :name %>
+  </div>
+
+  <div>
+    <%= f.submit "Salvar" %>
+  </div>
+<% end %>

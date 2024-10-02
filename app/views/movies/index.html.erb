@@ -1,0 +1,11 @@
+<h1> Lista de Filmes </h1>
+
+<ul>
+    <% @movies.each do |movie| %>
+        <li>
+            <%= link_to "#{movie.title} - #{movie.release_year}" , movie_path(movie) %>
+        </li>
+    <% end %>
+</ul>
+
+<%= link_to "Novo filme", new_movie_path %>
